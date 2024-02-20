@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package item;
+
+option go_package = "tolse.item.v1;itemv1";
+
+message UUID {
+    string value = 1;
+}
+
+message Item {
+    UUID item_id = 1;
+    string name = 2;
+    string rarity = 3;
+    string description = 4;
+}
+
+service ItemService {
+    rpc CreateItem(CreateItemRequest) returns (CreateItemResponse);
+    rpc GetItem(GetItemRequest) returns (GetItemResponse);
+    rpc GetAllItems(GetAllItemsRequest) returns (GetAllItemsResponse);
+    rpc DeleteItem(DeleteItemRequest) returns (DeleteItemResponse);
+}
+
+message CreateItemRequest {
+    Item item = 1;
+}
+
+message CreateItemResponse {
+    UUID item_id = 1;
+}
+
+message GetItemRequest {
+    UUID item_id = 1;
+}
+
+message GetItemResponse {
+    Item item = 1;
+}
+
+message GetAllItemsRequest {}
+
+message GetAllItemsResponse {
+    repeated Item items = 1;
+}
+
+message DeleteItemRequest {
+    UUID item_id = 1;
+}
+
+message DeleteItemResponse {}
