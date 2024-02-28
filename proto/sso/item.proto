@@ -4,12 +4,8 @@ package item;
 
 option go_package = "tolse.item.v1;itemv1";
 
-message UUID {
-    string value = 1;
-}
-
 message Item {
-    UUID item_id = 1;
+    string item_id = 1;
     string name = 2;
     string rarity = 3;
     string description = 4;
@@ -27,11 +23,11 @@ message CreateItemRequest {
 }
 
 message CreateItemResponse {
-    UUID item_id = 1;
+    string item_id = 1;
 }
 
 message GetItemRequest {
-    UUID item_id = 1;
+    string item_id = 1;
 }
 
 message GetItemResponse {
@@ -45,7 +41,7 @@ message GetAllItemsResponse {
 }
 
 message DeleteItemRequest {
-    UUID item_id = 1;
+    string item_id = 1;
 }
 
 message DeleteItemResponse {}
