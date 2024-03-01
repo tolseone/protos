@@ -19,7 +19,9 @@ service ItemService {
 }
 
 message CreateItemRequest {
-    Item item = 1;
+    string name = 1;
+    string rarity = 2;
+    string description = 3;
 }
 
 message CreateItemResponse {
