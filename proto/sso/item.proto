@@ -8,7 +8,7 @@ message Item {
     string item_id = 1;
     string name = 2;
     string rarity = 3;
-    string description = 4;
+    string quality = 4;
 }
 
 service ItemService {
@@ -21,7 +21,7 @@ service ItemService {
 message CreateItemRequest {
     string name = 1;
     string rarity = 2;
-    string description = 3;
+    string quality = 3;
 }
 
 message CreateItemResponse {
